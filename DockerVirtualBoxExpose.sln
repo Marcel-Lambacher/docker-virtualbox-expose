@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerVirtualBoxExpose.HostService", "src\DockerVirtualBoxExpose.HostService\DockerVirtualBoxExpose.HostService.csproj", "{BE3231A1-AF45-4979-80A6-6995F91CD7D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerVirtualBoxExpose.DockerAgent", "src\DockerVirtualBoxExpose.DockerAgent\DockerVirtualBoxExpose.DockerAgent.csproj", "{DFE2649C-8B39-402D-8B98-A03E454BC4DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerVirtualBoxExpose.Common", "src\DockerVirtualBoxExpose.Common\DockerVirtualBoxExpose.Common.csproj", "{9FC4F76A-E138-4BD3-BEE8-AB887EC2AE5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE3231A1-AF45-4979-80A6-6995F91CD7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE3231A1-AF45-4979-80A6-6995F91CD7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE3231A1-AF45-4979-80A6-6995F91CD7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE3231A1-AF45-4979-80A6-6995F91CD7D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE2649C-8B39-402D-8B98-A03E454BC4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE2649C-8B39-402D-8B98-A03E454BC4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE2649C-8B39-402D-8B98-A03E454BC4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE2649C-8B39-402D-8B98-A03E454BC4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC4F76A-E138-4BD3-BEE8-AB887EC2AE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC4F76A-E138-4BD3-BEE8-AB887EC2AE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC4F76A-E138-4BD3-BEE8-AB887EC2AE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC4F76A-E138-4BD3-BEE8-AB887EC2AE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1419C701-E203-438D-831E-5DA52BD909C8}
+	EndGlobalSection
+EndGlobal
