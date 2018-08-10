@@ -6,9 +6,10 @@ The windows host OS can directly access the docker services within the VirtualBo
 
 ## Prerequisites
 
-To run this toolset the following prerequisites:
+To run this toolset the following prerequisites are required:
 - VirtualBox installed on your Windows host OS
 - A docker compatible VM configured in VirtualBox (e.g Debian)
+- Docker Engine installed on the guest VM
 
 ## Installation
 
