@@ -25,4 +25,4 @@ To run this toolset the following prerequisites are required:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](../master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](../master/LICENSE) file for details
