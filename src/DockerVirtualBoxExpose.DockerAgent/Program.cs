@@ -1,4 +1,6 @@
 ﻿using System;
+using DockerVirtualBoxExpose.DockerAgent.Services;
+using DockerVirtualBoxExpose.DockerAgent.Watchdog;
 
 namespace DockerVirtualBoxExpose.DockerAgent
 {
@@ -6,7 +8,16 @@ namespace DockerVirtualBoxExpose.DockerAgent
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var notificationService = new MessageQueueNotificationService("localhost", 5556);
+
+            var exposedServiceWatcher = new ExposedServiceWatcher(notificationService);
+
+            var watchdog = new DockerWatchdog();
+            watchdog.AssignWatcher(exposedServiceWatcher);
+
+            watchdog.Start();
+
+            Console.Read();
         }
     }
 }
