@@ -20,6 +20,16 @@ namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
 
         public void Dispose()
         {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposing)
+            {
+                return;
+            }
+
             _timer?.Dispose();
         }
 

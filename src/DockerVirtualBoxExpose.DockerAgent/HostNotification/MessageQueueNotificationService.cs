@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace DockerVirtualBoxExpose.DockerAgent.Services
 {
-    public class MessageQueueNotificationService : IHostNotificationService, IDisposable
+    public sealed class MessageQueueNotificationService : IHostNotificationService, IDisposable
     {
         private readonly string _connectionString;
         private PushSocket _pushSocket;
@@ -30,7 +30,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Services
 
         public void Dispose()
         {
-            _pushSocket.Dispose();
+            _pushSocket?.Dispose();
         }
 
         private string GetSerializedMessageFrame(ExposedService exposedService)
