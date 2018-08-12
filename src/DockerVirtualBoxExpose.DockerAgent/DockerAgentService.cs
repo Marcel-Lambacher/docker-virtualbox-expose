@@ -25,7 +25,7 @@ namespace DockerVirtualBoxExpose.DockerAgent
 
             _dockerWatchdog.Start();
 
-            var client = new DockerClientConfiguration(new Uri("unix ///var/run/docker.sock")).CreateClient();
+            var client = new DockerClientConfiguration(new Uri("unix://var/run/docker.sock")).CreateClient();
             var containers = client.Containers.ListContainersAsync(new ContainersListParameters()).Result;
 
             foreach (var container in containers)
