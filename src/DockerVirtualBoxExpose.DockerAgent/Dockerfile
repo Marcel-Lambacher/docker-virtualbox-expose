@@ -3,11 +3,11 @@ WORKDIR /app
 
 FROM microsoft/dotnet:2.0-sdk AS build
 WORKDIR /src
-COPY src/DockerVirtualBoxExpose.DockerAgent/DockerVirtualBoxExpose.DockerAgent.csproj src/DockerVirtualBoxExpose.DockerAgent/
-COPY src/DockerVirtualBoxExpose.Common/DockerVirtualBoxExpose.Common.csproj src/DockerVirtualBoxExpose.Common/
-RUN dotnet restore src/DockerVirtualBoxExpose.DockerAgent/DockerVirtualBoxExpose.DockerAgent.csproj
+COPY DockerVirtualBoxExpose.DockerAgent/DockerVirtualBoxExpose.DockerAgent.csproj DockerVirtualBoxExpose.DockerAgent/
+COPY DockerVirtualBoxExpose.Common/DockerVirtualBoxExpose.Common.csproj DockerVirtualBoxExpose.Common/
+RUN dotnet restore DockerVirtualBoxExpose.DockerAgent/DockerVirtualBoxExpose.DockerAgent.csproj
 COPY . .
-WORKDIR /src/src/DockerVirtualBoxExpose.DockerAgent
+WORKDIR /src/DockerVirtualBoxExpose.DockerAgent
 RUN dotnet build DockerVirtualBoxExpose.DockerAgent.csproj -c Release -o /app
 
 FROM build AS publish
