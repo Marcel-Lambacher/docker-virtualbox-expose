@@ -17,6 +17,17 @@ To run this toolset the following prerequisites are required:
 
 ## Usage
 
+Start a docker container and attach the following label:
+```
+$ docker container run --label vm-expose --port 80:80 --port 8080:8080 <some-container>
+```
+Using the `vm-expose` label without a value will create a port forwarding for all exposed ports (i.e. 80 and 8080).
+We can also define specific ports we want to expose:
+```
+$ docker container run --label vm-expose="80, 22" --port 80:80 --port 21:21 --port 22:22 <some-container>
+```
+This command will expose only port 80 and 22 to the host system.
+
 ## Contributing
 
 ## Changelog
