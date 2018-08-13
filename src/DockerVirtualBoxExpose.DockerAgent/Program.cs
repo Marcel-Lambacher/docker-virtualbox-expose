@@ -6,7 +6,11 @@ namespace DockerVirtualBoxExpose.DockerAgent
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var service = new DockerAgentService(args);
+
+            Console.CancelKeyPress += (sender, eventArgs) => service.Exit();
+
+            service.Start();
         }
     }
 }
