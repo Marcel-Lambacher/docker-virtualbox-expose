@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Timers;
 
 namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
@@ -33,11 +34,11 @@ namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
             _timer?.Dispose();
         }
 
-        private void TimerOnElapsed(object sender, ElapsedEventArgs e)
+        private async void TimerOnElapsed(object sender, ElapsedEventArgs e)
         {
-            Poll();
+           await Poll();
         }
 
-        protected abstract void Poll();
+        protected abstract Task Poll();
     }
 }

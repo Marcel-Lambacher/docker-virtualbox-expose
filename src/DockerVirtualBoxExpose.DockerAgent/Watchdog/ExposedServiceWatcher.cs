@@ -1,6 +1,6 @@
 ﻿using System;
 using DockerVirtualBoxExpose.Common.Entities;
-using DockerVirtualBoxExpose.DockerAgent.Services;
+using DockerVirtualBoxExpose.DockerAgent.HostNotification;
 
 namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
 {

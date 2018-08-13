@@ -4,7 +4,7 @@ using NetMQ;
 using NetMQ.Sockets;
 using Newtonsoft.Json;
 
-namespace DockerVirtualBoxExpose.DockerAgent.Services
+namespace DockerVirtualBoxExpose.DockerAgent.HostNotification
 {
     public sealed class MessageQueueNotificationService : IHostNotificationService, IDisposable
     {

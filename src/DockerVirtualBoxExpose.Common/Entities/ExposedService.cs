@@ -2,8 +2,10 @@
 {
     public class ExposedService
     {
-        public string Name { get; set; }
+        public string ContainerId { get; set; }
 
         public int Port { get; set; }
+
+        public ExposedServiceState State { get; set; } 
     }
 }

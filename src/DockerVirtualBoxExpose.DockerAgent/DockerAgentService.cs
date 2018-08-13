@@ -1,8 +1,5 @@
-﻿using System;
-using Docker.DotNet;
-using Docker.DotNet.Models;
-using DockerVirtualBoxExpose.DockerAgent.Docker;
-using DockerVirtualBoxExpose.DockerAgent.Services;
+﻿using DockerVirtualBoxExpose.DockerAgent.Docker;
+using DockerVirtualBoxExpose.DockerAgent.HostNotification;
 using DockerVirtualBoxExpose.DockerAgent.Watchdog;
 
 namespace DockerVirtualBoxExpose.DockerAgent
@@ -10,6 +7,7 @@ namespace DockerVirtualBoxExpose.DockerAgent
     public sealed class DockerAgentService: DockerService
     {
         private MessageQueueNotificationService _notificationService;
+        private DockerContainerClient _dockerContainerClient;
         private DockerWatchdog _dockerWatchdog;
 
         public DockerAgentService(string[] args) : base(args)  { }
@@ -20,23 +18,17 @@ namespace DockerVirtualBoxExpose.DockerAgent
 
             var exposedServiceWatcher = new ExposedServiceWatcher(_notificationService);
 
-            _dockerWatchdog = new DockerWatchdog();
+            _dockerContainerClient = new DockerContainerClient("unix:///var/run/docker.sock");
+            _dockerWatchdog = new DockerWatchdog(_dockerContainerClient);
             _dockerWatchdog.AssignWatcher(exposedServiceWatcher);
 
             _dockerWatchdog.Start();
-
-            var client = new DockerClientConfiguration(new Uri("unix://var/run/docker.sock")).CreateClient();
-            var containers = client.Containers.ListContainersAsync(new ContainersListParameters()).Result;
-
-            foreach (var container in containers)
-            {
-                Console.WriteLine(string.Join(" - ", container.Names));
-            }
         }
 
         public override void Dispose()
         {
             _dockerWatchdog?.Dispose();
+            _dockerContainerClient?.Dispose();
             _notificationService?.Dispose();
         }
     }

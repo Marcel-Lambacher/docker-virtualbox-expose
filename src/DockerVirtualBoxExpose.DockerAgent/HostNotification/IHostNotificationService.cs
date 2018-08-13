@@ -1,6 +1,6 @@
 ﻿using DockerVirtualBoxExpose.Common.Entities;
 
-namespace DockerVirtualBoxExpose.DockerAgent.Services
+namespace DockerVirtualBoxExpose.DockerAgent.HostNotification
 {
     public interface IHostNotificationService
     {
