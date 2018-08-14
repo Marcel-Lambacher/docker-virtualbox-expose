@@ -22,6 +22,7 @@ Start a docker container and attach the following label:
 $ docker container run --label vm-expose --port 80:80 --port 8080:8080 <some-container>
 ```
 Using the `vm-expose` label without a value will create a port forwarding for all exposed ports (i.e. 80 and 8080).
+The windows host is now able to access the exposed services directly using the localhost addresss.
 We can also define specific ports we want to expose:
 ```
 $ docker container run --label vm-expose="80, 22" --port 80:80 --port 21:21 --port 22:22 <some-container>
