@@ -37,4 +37,4 @@ This command will expose only port 80 and 22 to the host system.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](../master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](../master/LICENSE) file for details.
