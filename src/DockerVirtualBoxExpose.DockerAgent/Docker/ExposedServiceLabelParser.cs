@@ -35,7 +35,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Docker
                     continue;
                 }
 
-                yield return new ExposedService { ContainerId = container.ID, Port = port };
+                yield return new ExposedService(container.ID, port);
             }
         }
 
@@ -49,7 +49,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Docker
         {
             return container.Ports
                 .Where(containerPort => !string.IsNullOrWhiteSpace(containerPort.IP))
-                .Select(containerPort => new ExposedService { ContainerId = container.ID, Port = containerPort.PublicPort });
+                .Select(containerPort => new ExposedService(container.ID, containerPort.PublicPort));
         }
 
         private static string RemoveAllWhitespaces(string value)
