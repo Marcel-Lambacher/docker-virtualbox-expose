@@ -12,9 +12,9 @@ namespace DockerVirtualBoxExpose.DockerAgent.Docker
     {
         private readonly IDockerClient _dockerClient;
 
-        public DockerContainerClient(string connectionString)
+        public DockerContainerClient(IDockerClient dockerClient)
         {
-            _dockerClient = new DockerClientConfiguration(new Uri(connectionString)).CreateClient();   
+            _dockerClient = dockerClient;
         }
 
         public async Task<IEnumerable<ExposedService>> GetExposedServices()
