@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using DockerVirtualBoxExpose.DockerAgent.Docker;
 using NSubstitute;
 using Xunit;
@@ -11,8 +9,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Tests.Docker
     {
         public DockerServiceMock() : base(null) {  }
 
-        public override void Dispose()
-        { }
+        public override void Dispose()  { }
 
         protected override void ServiceMain()
         {
