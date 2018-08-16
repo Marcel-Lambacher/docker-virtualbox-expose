@@ -41,8 +41,8 @@ namespace DockerVirtualBoxExpose.DockerAgent.Docker
 
         private static string GetExposedServiceLabelValue(ContainerListResponse container)
         {
-            var exposedLabel = container.Labels.FirstOrDefault(label => label.Key == ExposedServiceLabel);
-            return exposedLabel.Value;
+            var exposedLabel = container.Labels?.FirstOrDefault(label => label.Key == ExposedServiceLabel);
+            return exposedLabel?.Value;
         }
 
         private static IEnumerable<ExposedService> GetAllExposedPorts(ContainerListResponse container)

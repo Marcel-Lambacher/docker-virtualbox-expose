@@ -15,7 +15,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
 
         public void WatchEventRaised(ExposedService watchdogEvent)
         {
-            _notificationService.Notify(watchdogEvent);
+            _notificationService?.Notify(watchdogEvent);
         }
     }
 }
