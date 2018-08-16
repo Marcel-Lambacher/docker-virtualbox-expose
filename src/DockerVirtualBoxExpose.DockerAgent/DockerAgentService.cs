@@ -3,6 +3,7 @@ using Docker.DotNet;
 using DockerVirtualBoxExpose.DockerAgent.Docker;
 using DockerVirtualBoxExpose.DockerAgent.HostNotification;
 using DockerVirtualBoxExpose.DockerAgent.Watchdog;
+using NetMQ.Sockets;
 
 namespace DockerVirtualBoxExpose.DockerAgent
 {
@@ -17,7 +18,7 @@ namespace DockerVirtualBoxExpose.DockerAgent
 
         protected override void ServiceMain()
         {
-            _notificationService = new MessageQueueNotificationService("localhost", 5556);
+            _notificationService = new MessageQueueNotificationService(new PushSocket("tcp://localhost:5556"));
 
             var exposedServiceWatcher = new ExposedServiceWatcher(_notificationService);
 

@@ -31,6 +31,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
                 return;
             }
 
+            _timer.Elapsed -= TimerOnElapsed;
             _timer?.Dispose();
         }
 

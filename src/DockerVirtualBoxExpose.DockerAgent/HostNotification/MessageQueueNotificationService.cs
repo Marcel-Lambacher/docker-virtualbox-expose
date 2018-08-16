@@ -8,18 +8,11 @@ namespace DockerVirtualBoxExpose.DockerAgent.HostNotification
 {
     public sealed class MessageQueueNotificationService : IHostNotificationService, IDisposable
     {
-        private readonly string _connectionString;
-        private PushSocket _pushSocket;
+        private readonly PushSocket _pushSocket;
 
-        public MessageQueueNotificationService(string address, int port)
+        public MessageQueueNotificationService(PushSocket pushSocket)
         {
-            _connectionString = $"tcp://{address}:{port}";
-        }
-
-        public void Start()
-        {
-            _pushSocket?.Dispose();
-            _pushSocket = new PushSocket(_connectionString);
+            _pushSocket = pushSocket;
         }
 
         public void Notify(ExposedService exposedService)
