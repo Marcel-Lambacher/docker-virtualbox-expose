@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DockerVirtualBoxExpose.Common.Entities;
 using DockerVirtualBoxExpose.DockerAgent.Docker;
+using Serilog;
 
 namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
 {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Docker.DotNet.Models;
 using DockerVirtualBoxExpose.Common.Entities;
+using Serilog;
 
 namespace DockerVirtualBoxExpose.DockerAgent.Docker
 {
@@ -32,6 +33,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Docker
             {
                 if (!int.TryParse(stringPort, out var port))
                 {
+                    Log.Logger.Warning("The exposed port {port} for the container {container} couldn't be parsed!", stringPort, container.ID);
                     continue;
                 }
 
