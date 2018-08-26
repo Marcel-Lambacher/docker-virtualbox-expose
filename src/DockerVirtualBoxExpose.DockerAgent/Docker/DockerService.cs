@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace DockerVirtualBoxExpose.DockerAgent.Docker
 {
@@ -24,6 +25,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Docker
 
         public void Exit()
         {
+            Log.Logger.ForContext<DockerService>().Information("A docker service has received a cancel request. Trying to dispose all resources...");
             Dispose();
             WaitHandle.Set();
         }

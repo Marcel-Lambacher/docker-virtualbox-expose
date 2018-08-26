@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DockerVirtualBoxExpose.Common.Entities;
 using DockerVirtualBoxExpose.DockerAgent.Docker;
+using Serilog;
 
 namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
 {
@@ -26,7 +28,17 @@ namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
 
         protected override async Task Poll()
         {
-            var exposedServices = (await _dockerClient.GetExposedServices()).ToList();
+            List<ExposedService> exposedServices;
+
+            try
+            {
+                exposedServices = (await _dockerClient.GetExposedServices()).ToList();
+            }
+            catch (Exception exception)
+            {
+                Log.Logger.ForContext<DockerWatchdog>().Error(exception, "Error while retrieving current docker containers.");
+                return;
+            }
 
             lock (_historyLock)
             {

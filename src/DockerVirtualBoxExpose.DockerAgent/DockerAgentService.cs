@@ -1,10 +1,7 @@
-﻿using System;
-using Docker.DotNet;
-using DockerVirtualBoxExpose.Common.Entities;
+﻿using DockerVirtualBoxExpose.Common.Entities;
 using DockerVirtualBoxExpose.DockerAgent.Docker;
-using DockerVirtualBoxExpose.DockerAgent.HostNotification;
 using DockerVirtualBoxExpose.DockerAgent.Watchdog;
-using NetMQ.Sockets;
+using Serilog;
 
 namespace DockerVirtualBoxExpose.DockerAgent
 {
@@ -22,12 +19,15 @@ namespace DockerVirtualBoxExpose.DockerAgent
         protected override void ServiceMain()
         {
             _dockerWatchdog.AssignWatcher(_exposedServiceWatcher);
+
+            Log.Logger.ForContext<DockerAgentService>().Information("Starting docker watchdog...");
             _dockerWatchdog.Start();
         }
 
         public override void Dispose()
         {
             _dockerWatchdog?.Dispose();
+            Log.Logger.ForContext<DockerAgentService>().Information("The docker agent service has been disposed.");
         }
     }
 }

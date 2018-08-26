@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Docker.DotNet;
 using Docker.DotNet.Models;
 using DockerVirtualBoxExpose.Common.Entities;
+using Serilog;
 
 namespace DockerVirtualBoxExpose.DockerAgent.Docker
 {
@@ -34,6 +35,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Docker
         public void Dispose()
         {
             _dockerClient?.Dispose();
+            Log.Logger.ForContext<DockerContainerClient>().Information("Docker client has been disposed.");
         }
     }
 }
