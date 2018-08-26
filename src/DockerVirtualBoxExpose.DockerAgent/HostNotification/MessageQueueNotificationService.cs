@@ -18,7 +18,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.HostNotification
 
         public void Notify(ExposedService exposedService)
         {
-            Log.Logger.ForContext<MessageQueueNotificationService>().Debug("New container event: {ExposedService}", exposedService);
+            Log.Logger.ForContext<MessageQueueNotificationService>().Information("New container event: {@ExposedService}", exposedService);
             var frame = GetSerializedMessageFrame(exposedService);
 
             try
@@ -34,7 +34,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.HostNotification
         public void Dispose()
         {
             _pushSocket?.Dispose();
-            Log.Logger.ForContext<MessageQueueNotificationService>().Debug("Message queue server has been disposed.");
+            Log.Logger.ForContext<MessageQueueNotificationService>().Information("Message queue server has been disposed.");
         }
 
         private string GetSerializedMessageFrame(ExposedService exposedService)

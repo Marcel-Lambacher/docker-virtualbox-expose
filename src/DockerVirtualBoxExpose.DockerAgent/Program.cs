@@ -18,7 +18,7 @@ namespace DockerVirtualBoxExpose.DockerAgent
         static void Main()
         {        
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.Console(LogEventLevel.Debug)
+                .WriteTo.Console()
                 .CreateLogger();
 
             var collection = new ServiceCollection()

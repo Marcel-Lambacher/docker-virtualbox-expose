@@ -27,7 +27,7 @@ namespace DockerVirtualBoxExpose.DockerAgent
         public override void Dispose()
         {
             _dockerWatchdog?.Dispose();
-            Log.Logger.ForContext<DockerAgentService>().Debug("The docker agent service has been disposed.");
+            Log.Logger.ForContext<DockerAgentService>().Information("The docker agent service has been disposed.");
         }
     }
 }

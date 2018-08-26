@@ -35,7 +35,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Docker
         public void Dispose()
         {
             _dockerClient?.Dispose();
-            Log.Logger.ForContext<DockerContainerClient>().Debug("Docker client has been disposed.");
+            Log.Logger.ForContext<DockerContainerClient>().Information("Docker client has been disposed.");
         }
     }
 }
