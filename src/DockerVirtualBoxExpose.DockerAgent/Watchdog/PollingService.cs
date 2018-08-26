@@ -17,7 +17,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
 
         public void Start()
         {
-            Log.Logger.ForContext<PollingService>().Debug("A polling service has been started.");
+            Log.Logger.ForContext<PollingService>().Information("A polling service has been started.");
             _timer.Start();
         }
 
@@ -36,7 +36,7 @@ namespace DockerVirtualBoxExpose.DockerAgent.Watchdog
             _timer.Elapsed -= TimerOnElapsed;
             _timer?.Dispose();
 
-            Log.Logger.ForContext<PollingService>().Debug("A polling service has been disposed.");
+            Log.Logger.ForContext<PollingService>().Information("A polling service has been disposed.");
         }
 
         private async void TimerOnElapsed(object sender, ElapsedEventArgs e)

@@ -40,7 +40,7 @@ namespace DockerVirtualBoxExpose.DockerAgent
                 Console.CancelKeyPress += (sender, eventArgs) => service.Exit();
                 service.Start();
             }
-
+            
             Log.Logger.ForContext<Program>().Information("Docker agent service has been terminated successfully.");
         }
     }
