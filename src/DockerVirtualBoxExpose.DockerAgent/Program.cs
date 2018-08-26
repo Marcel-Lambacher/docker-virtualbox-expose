@@ -7,6 +7,7 @@ using DockerVirtualBoxExpose.DockerAgent.Watchdog;
 using Microsoft.Extensions.DependencyInjection;
 using NetMQ.Sockets;
 using Serilog;
+using Serilog.Events;
 
 namespace DockerVirtualBoxExpose.DockerAgent
 {
@@ -17,7 +18,7 @@ namespace DockerVirtualBoxExpose.DockerAgent
         static void Main()
         {        
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.Console()
+                .WriteTo.Console(LogEventLevel.Debug)
                 .CreateLogger();
 
             var collection = new ServiceCollection()
