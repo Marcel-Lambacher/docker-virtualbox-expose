@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerVirtualBoxExpose.HostService", "src\DockerVirtualBoxExpose.HostService\DockerVirtualBoxExpose.HostService.csproj", "{BE3231A1-AF45-4979-80A6-6995F91CD7D9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerVirtualBoxExpose.DockerAgent", "src\DockerVirtualBoxExpose.DockerAgent\DockerVirtualBoxExpose.DockerAgent.csproj", "{DFE2649C-8B39-402D-8B98-A03E454BC4DC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerVirtualBoxExpose.Common", "src\DockerVirtualBoxExpose.Common\DockerVirtualBoxExpose.Common.csproj", "{9FC4F76A-E138-4BD3-BEE8-AB887EC2AE5A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7E97E8D1-9311-4E90-8A18-F5A867DAD2E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerVirtualBoxExpose.DockerAgent.Tests", "tests\DockerVirtualBoxExpose.DockerAgent.Tests\DockerVirtualBoxExpose.DockerAgent.Tests.csproj", "{9F8A9930-D85E-45A7-8383-28E9FEAD1865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerVirtualBoxExpose.DockerAgent.Tests", "tests\DockerVirtualBoxExpose.DockerAgent.Tests\DockerVirtualBoxExpose.DockerAgent.Tests.csproj", "{9F8A9930-D85E-45A7-8383-28E9FEAD1865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerVirtualBoxExpose.HostService", "src\DockerVirtualBoxExpose.HostService\DockerVirtualBoxExpose.HostService.csproj", "{56CB7F3D-6B72-4614-B3F1-BC83C57F4DBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BE3231A1-AF45-4979-80A6-6995F91CD7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE3231A1-AF45-4979-80A6-6995F91CD7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE3231A1-AF45-4979-80A6-6995F91CD7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE3231A1-AF45-4979-80A6-6995F91CD7D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DFE2649C-8B39-402D-8B98-A03E454BC4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DFE2649C-8B39-402D-8B98-A03E454BC4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFE2649C-8B39-402D-8B98-A03E454BC4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,6 +31,10 @@ Global
 		{9F8A9930-D85E-45A7-8383-28E9FEAD1865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F8A9930-D85E-45A7-8383-28E9FEAD1865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F8A9930-D85E-45A7-8383-28E9FEAD1865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56CB7F3D-6B72-4614-B3F1-BC83C57F4DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56CB7F3D-6B72-4614-B3F1-BC83C57F4DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56CB7F3D-6B72-4614-B3F1-BC83C57F4DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56CB7F3D-6B72-4614-B3F1-BC83C57F4DBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
