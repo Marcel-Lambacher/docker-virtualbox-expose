@@ -1,3 +1,7 @@
+# Attention:
+
+This feature is available in the offical Docker for windows toolkit now and therefore this repository is not unter maintenance anymore!
+
 # docker-virtualbox-expose
 
 This projects provides a set of services which integrates VirtualBox and Docker seamless into the Windows host.
